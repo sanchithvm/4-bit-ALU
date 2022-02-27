@@ -8,6 +8,8 @@ Arithemetic and Logic Unit (ALU) is the heart of a computer which performs all t
 - Synopsys 28nm PDK:  The Synopsys 28nm Process Design Kit(PDK) was used in creation and simulation of the above designed circuit.
 ## Design
 The ALU has 2 4-bit inputs X and Y, one output OUT and 8 control signals zX, zY, nX, nY, L, F, Cs, nOUT. These control signals specify the operation the ALU has to perform. Usually an ALU has N:1 multiplexer which selects the operation based on the select lines. The ALU presented here uses a series of multiplexers to have reusable circuits. The multiplexers are designed using transmission gate to reduce power consumption.<br>
+<img src="https://user-images.githubusercontent.com/75156759/155886829-5a7065a0-2bf9-46f7-b8f3-f6e0c293c819.png">
+
 The control signals specify a type of operation:
 - zX and zY: If HIGH then it passes 0 to next stage
 - nX and nY: If HIGH then it passes inverted input to next stage
@@ -178,6 +180,19 @@ The below table has a list of common operations and the values of control signal
 </table>
 and many more
 <h2> Schematic </h2>
+Inverter
+<img src = "https://user-images.githubusercontent.com/75156759/155886689-7efc2acd-830e-428f-abf7-3282154dc0a3.png">
+XOR gate
+<img src="https://user-images.githubusercontent.com/75156759/155886537-cbd83d45-699b-4afe-9503-44ca8c15c723.png">
+2:1 Mux Schematic
+<img src="https://user-images.githubusercontent.com/75156759/155886510-fd2391d9-8003-437a-82e4-f25c83314468.png">
+Full Adder
+<img src="https://user-images.githubusercontent.com/75156759/155886564-62a42eaa-e9fe-40e0-bd91-0e3a551c6c7b.png">
+ALU 1-bit
+<img src="https://user-images.githubusercontent.com/75156759/155886749-3eb346ae-f6a0-4b26-b4ba-d6df6c4f15cb.png">
+ALU 4-bit
+<img src="https://user-images.githubusercontent.com/75156759/155886784-08e5f509-7c50-4132-855b-dadd49eb88ba.png">
+
 <h2> Netlist </h2>
 <h2> Waveform </h2>
 <h2> Author </h2>
