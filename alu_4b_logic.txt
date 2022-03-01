@@ -1,0 +1,190 @@
+*  Generated for: PrimeSim
+*  Design library name: alu_lib
+*  Design cell name: alu_4b_tb
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 10:03:38 2022
+
+.global gnd! vdd!
+********************************************************************************
+* Library          : alu_lib
+* Cell             : cp_inv
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt cp_inv in out vdd
+xm0 out in gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm1 out in vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+.ends cp_inv
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : mux21
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt mux21 out sel vdd x0 x1
+xm1 x0 net10 out gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm0 x1 sel out gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm3 out sel x0 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm2 out net10 x1 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xi4 sel net10 vdd cp_inv
+.ends mux21
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : xor_g
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt xor_g a b out vt_bulk_n_gnd! vt_bulk_p_vdd!
+xm8 b a net16 vt_bulk_p_vdd! p105 w=0.25u l=0.03u nf=1 m=1
+xm9 a b net16 vt_bulk_p_vdd! p105 w=0.25u l=0.03u nf=1 m=1
+xm2 net16 a gnd! vt_bulk_n_gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xi11 net15 out net17 cp_inv
+xi10 net16 net15 net17 cp_inv
+v12 net17 gnd! dc=1.8
+.ends xor_g
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : adder
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt adder a b c_in c_out sum vdd vt_bulk_n_gnd! vt_bulk_p_vdd!
+xi9 c_out net27 vdd a c_in mux21
+xi8 c_in net27 sum vt_bulk_n_gnd! vt_bulk_p_vdd! xor_g
+xi7 a b net27 vt_bulk_n_gnd! vt_bulk_p_vdd! xor_g
+.ends adder
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : and_g
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt and_g a b out vdd vt_bulk_n_gnd! vt_bulk_p_vdd!
+xm1 net4 b gnd! vt_bulk_n_gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm0 net12 a net4 vt_bulk_n_gnd! n105 w=0.1u l=0.03u nf=1 m=1
+xm3 net12 b vdd vt_bulk_p_vdd! p105 w=0.1u l=0.03u nf=1 m=1
+xm2 net12 a vdd vt_bulk_p_vdd! p105 w=0.1u l=0.03u nf=1 m=1
+xi4 net12 out vdd cp_inv
+.ends and_g
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : alu_1b
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt alu_1b f l cin cout nout nx ny out vdd x y zx zy vt_bulk_n_gnd!
++ vt_bulk_p_vdd!
+xi14 net89 ny vdd net60 net62 mux21
+xi13 net60 zy vdd y gnd! mux21
+xi6 net31 l vdd net51 net55 mux21
+xi3 out nout vdd net95 net39 mux21
+xi2 net98 f vdd net31 net46 mux21
+xi1 net94 nx vdd net38 net36 mux21
+xi0 net38 zx vdd x gnd! mux21
+xi26 net98 net97 vdd cp_inv
+xi25 net97 net95 vdd cp_inv
+xi24 net94 net93 vdd cp_inv
+xi23 net93 net91 vdd cp_inv
+xi22 net89 net88 vdd cp_inv
+xi21 net88 net85 vdd cp_inv
+xi20 net94 net77 vdd cp_inv
+xi19 net77 net83 vdd cp_inv
+xi18 net89 net71 vdd cp_inv
+xi15 net60 net62 vdd cp_inv
+xi8 net95 net39 vdd cp_inv
+xi7 net38 net36 vdd cp_inv
+xi17 net71 net84 vdd cp_inv
+xi10 net85 net91 cin cout net46 vdd vt_bulk_n_gnd! vt_bulk_p_vdd! adder
+xi11 net84 net83 net51 vdd vt_bulk_n_gnd! vt_bulk_p_vdd! and_g
+xi12 net84 net83 net55 vt_bulk_n_gnd! vt_bulk_p_vdd! xor_g
+.ends alu_1b
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : alu_4b
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt alu_4b cs f l cin cout nout nx ny out0 out1 out2 out3 vdd x0 x1 x2 x3 y0
++  y1 y2 y3 zx zy vt_bulk_n_gnd! vt_bulk_p_vdd!
+xi0 net18 cs vdd gnd! cin mux21
+xi4 f l net57 cout nout nx ny out3 vdd x3 y3 zx zy vt_bulk_n_gnd! vt_bulk_p_vdd!
++  alu_1b
+xi3 f l net44 net78 nout nx ny out2 vdd x2 y2 zx zy vt_bulk_n_gnd!
++ vt_bulk_p_vdd! alu_1b
+xi2 f l net31 net77 nout nx ny out1 vdd x1 y1 zx zy vt_bulk_n_gnd!
++ vt_bulk_p_vdd! alu_1b
+xi1 f l net18 net58 nout nx ny out0 vdd x0 y0 zx zy vt_bulk_n_gnd!
++ vt_bulk_p_vdd! alu_1b
+xi11 net76 net57 vdd cp_inv
+xi10 net78 net76 vdd cp_inv
+xi9 net70 net44 vdd cp_inv
+xi8 net77 net70 vdd cp_inv
+xi7 net64 net31 vdd cp_inv
+xi6 net58 net64 vdd cp_inv
+.ends alu_4b
+
+********************************************************************************
+* Library          : alu_lib
+* Cell             : alu_4b_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi11 gnd! gnd! l_cs net103 cout nout nx ny o0 o1 o2 o3 net104 net104 gnd! gnd!
++ net104 net103 gnd! net103 gnd! gnd! gnd! gnd! vdd! alu_4b
+v12 net104 gnd! dc=1.8
+v13 net103 gnd! dc=1.8
+v10 l_cs gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 32u 64u )
+v5 nout gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 8u 16u )
+v4 ny gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 4u 8u )
+v3 nx gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 2u 4u )
+c16 cout gnd! c=1p
+c15 o3 gnd! c=1p
+c14 o2 gnd! c=1p
+c8 o1 gnd! c=1p
+c7 o0 gnd! c=1p
+
+
+
+
+
+
+
+
+.tran '1u' '64u' name=tran
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(l_cs) v(nout) v(nx) v(ny) v(o0) v(o1) v(o2) v(o3)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
