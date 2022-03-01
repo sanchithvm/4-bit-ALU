@@ -215,6 +215,13 @@ ALU 1-bit
 ALU 4-bit
 <img src="https://user-images.githubusercontent.com/75156759/156156601-269921b8-e7db-48d9-be22-fcfc5aa16ab6.png">
 <h2> Netlist </h2>
+Find the netlists for the 3-part simulation here.
+<ul>
+  <li> <a href="https://github.com/sanchithvm/4-bit-ALU/blob/main/alu_4b_add.txt">Add/Sub</a></li>
+  <li> <a href="https://github.com/sanchithvm/4-bit-ALU/blob/main/alu_4b_logic.txt">Logical</a></li>
+  <li> <a href="https://github.com/sanchithvm/4-bit-ALU/blob/main/alu_4b_inc.txt"> Inc/Dec</a></li>
+</ul>
+
 <h2> Waveform </h2>
 For Simulation, I have given X=4'b1001 and Y=4'0101 and the output is seen in {o3,o2,o1,o0}. I have split the simulation into 3 parts - logical, add/aub and inc/dec and gave different inputs to simulate the different operations. For easy reference, I have added labels indicating the operation in the waveforms.
 <h3>Logical Operations</h3>
