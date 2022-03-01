@@ -189,14 +189,31 @@ XOR gate
 Full Adder
 <img src="https://user-images.githubusercontent.com/75156759/155886564-62a42eaa-e9fe-40e0-bd91-0e3a551c6c7b.png">
 ALU 1-bit
-
+<img src="https://user-images.githubusercontent.com/75156759/156156517-1b81a95f-b0c9-4649-a689-f407cab5aa43.png">
 ALU 4-bit
+<img src="https://user-images.githubusercontent.com/75156759/156156601-269921b8-e7db-48d9-be22-fcfc5aa16ab6.png">
 <h2> Netlist </h2>
 <h2> Waveform </h2>
-For Simulation, I have given X=4'b1001 and Y=4'0101. Also F and Cs are LOW so simulate logical operations. The waveform for logical operations is below. For easy reference, I have added labels indicating the operation.
-<img src="">
+For Simulation, I have given X=4'b1001 and Y=4'0101 and the output is seen in {o3,o2,o1,o0}. I have split the simulation into 3 parts - logical, add/aub and inc/dec and gave different inputs to simulate the different operations. For easy reference, I have added labels indicating the operation in the waveforms.
+<h3>Logical Operations</h3>
+ Also F and Cs are LOW to simulate logical operations. The waveform for logical operations is below. 
+Below are the schematic and waveform.
+<img src="https://user-images.githubusercontent.com/75156759/156156756-e70bf3c0-69f4-4a9b-9d93-feee43d20849.png">
 <br>
-We can ignore the spikes in actual CPU because the data will be held in flipflops and these spikes do not conform to setup and hold times.
+<img src="https://user-images.githubusercontent.com/75156759/156156980-b0e8429e-7b21-4cba-b990-f9045ad9691e.png">
+<br>
+<h3>Add/Sub Operations</h3>
+I have made F=1, Cin=1 and L=0. Below are schematic and waveform.
+<img src="https://user-images.githubusercontent.com/75156759/156157558-8050a567-20b5-4553-9e0a-a33301f07417.png">
+<br>
+<img src="https://user-images.githubusercontent.com/75156759/156157646-5e095ab4-11fe-481e-a44b-704991178087.png">
+<h3>INC/DEC Operations</h3>
+Here L=0, F=1, Cin=0 and Cs=0. Below are schematic and waveform.
+<img src="https://user-images.githubusercontent.com/75156759/156158294-6f1b0b19-6a56-4e3b-af6d-6e06c3dcffc1.png">
+<br>
+<img src="https://user-images.githubusercontent.com/75156759/156158382-f1bf0df8-b953-4468-a9de-7829d3ee001a.png">
+<br>
+We can ignore the spikes in actual CPU because the data will be held in flipflops and these spikes do not conform to setup and hold times, hence will not cause any issues.
 <h2> Author </h2>
 <a href="https://www.linkedin.com/in/sanchith-v-m-b70a061bb/">Sanchith V M</a>
 <h2> Acknowledgements </h2>
@@ -208,8 +225,6 @@ We can ignore the spikes in actual CPU because the data will be held in flipflop
   <li> Sameer Durgoji, NIT-K </li>
   </ul>
 <h2> References</h2>
-
-
-
-  
-
+1. Sanchith V M , Prashanth K S , Madhvesh M Ballal , Pawan Bharadwaj, 2021, Low Power Microprocessor Design, INTERNATIONAL JOURNAL OF ENGINEERING RESEARCH & TECHNOLOGY (IJERT) Volume 10, Issue 07 (July 2021),
+2. Subodh Wairya, Rajendra Kumar Nagaria, Sudarshan Tiwari, "Performance Analysis of High Speed Hybrid CMOS Full Adder Circuits for Low Voltage VLSI Design", VLSI Design, vol. 2012, Article ID 173079, 18 pages, 2012. https://doi.org/10.1155/2012/173079
+3. V. Venkata Roa, et al., Design and Simulation of 1-bit Arithmetic Logic Unit using Pass Transistor Logic Families, International Journal of Pure and Applied Mathematics, Volume 120, No. 6 2018
