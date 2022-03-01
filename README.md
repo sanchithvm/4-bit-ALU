@@ -189,20 +189,23 @@ XOR gate
 Full Adder
 <img src="https://user-images.githubusercontent.com/75156759/155886564-62a42eaa-e9fe-40e0-bd91-0e3a551c6c7b.png">
 ALU 1-bit
-<img src="https://user-images.githubusercontent.com/75156759/155886749-3eb346ae-f6a0-4b26-b4ba-d6df6c4f15cb.png">
-ALU 4-bit
-<img src="https://user-images.githubusercontent.com/75156759/155886784-08e5f509-7c50-4132-855b-dadd49eb88ba.png">
 
+ALU 4-bit
 <h2> Netlist </h2>
 <h2> Waveform </h2>
+For Simulation, I have given X=4'b1001 and Y=4'0101. Also F and Cs are LOW so simulate logical operations. The waveform for logical operations is below. For easy reference, I have added labels indicating the operation.
+<img src="">
+<br>
+We can ignore the spikes in actual CPU because the data will be held in flipflops and these spikes do not conform to setup and hold times.
 <h2> Author </h2>
+<a href="https://www.linkedin.com/in/sanchith-v-m-b70a061bb/">Sanchith V M</a>
 <h2> Acknowledgements </h2>
 <ul>
   <li> VSD </li>
   <li> Synopsys India </li>
   <li> IIT Hyderabad </li>
   <li> Chinmay Panda, IIT-H </li>
-  <li> Sameer Durgoji </li>
+  <li> Sameer Durgoji, NIT-K </li>
   </ul>
 <h2> References</h2>
 
