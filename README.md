@@ -145,15 +145,26 @@ The below table has a list of common operations and the values of control signal
     <td> Y-X (borrow)</td>
   </tr>
   <tr>
+    <td> 1</td>
     <td> 0</td>
+    <td> 1</td>
+    <td> 0</td>
+    <td> 0</td>
+    <td> 1</td>
+    <td> 0</td>
+    <td> 1</td>
+    <td> -Y </td>
+  </tr>
+  <tr>
+    <td> 0</td>
+    <td> 1</td>
+    <td> 1</td>
     <td> 1</td>
     <td> 0</td>
     <td> 1</td>
     <td> 0</td>
     <td> 1</td>
-    <td> 0</td>
-    <td> 1</td>
-    <td> -X (borrow)</td>
+    <td> X+1</td>
   </tr>
   <tr>
     <td> 1</td>
@@ -167,7 +178,7 @@ The below table has a list of common operations and the values of control signal
     <td> Y+1</td>
   </tr>
   <tr>
-    <td> 1</td>
+    <td> 0</td>
     <td> 1</td>
     <td> 0</td>
     <td> 1</td>
@@ -176,6 +187,17 @@ The below table has a list of common operations and the values of control signal
     <td> 0</td>
     <td> 0</td>
     <td> X-1</td>
+  </tr>
+  <tr>
+    <td> 1</td>
+    <td> 0</td>
+    <td> 1</td>
+    <td> 0</td>
+    <td> 0</td>
+    <td> 1</td>
+    <td> 0</td>
+    <td> 0</td>
+    <td> Y-1</td>
   </tr>
 </table>
 and many more
