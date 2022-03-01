@@ -240,13 +240,16 @@ We can ignore the spikes in actual CPU because the data will be held in flipflop
 <a href="https://www.linkedin.com/in/sanchith-v-m-b70a061bb/">Sanchith V M</a>
 <h2> Acknowledgements </h2>
 <ul>
-  <li> VSD </li>
-  <li> Synopsys India </li>
-  <li> IIT Hyderabad </li>
-  <li> Chinmay Panda, IIT-H </li>
-  <li> Sameer Durgoji, NIT-K </li>
+  <li><a href="https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/"> Kunal Ghosh, VSD</a> </li>
+  <li> <a href="https://www.synopsys.com/">Synopsys India </a></li>
+  <li> <a href="https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/">IIT Hyderabad</a> </li>
+  <li> <a href="https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/"> Chinmay Panda, IIT-H</a> </li>
+  <li> <a href="https://www.linkedin.com/in/sumanto-kar-0424391a9/"> Sumanto Kar </a></li>
+  <li> <a href="https://www.linkedin.com/in/sameer-s-durgoji-340b26180/">Sameer Durgoji, NIT-K </a></li>
   </ul>
 <h2> References</h2>
-1. Sanchith V M , Prashanth K S , Madhvesh M Ballal , Pawan Bharadwaj, 2021, Low Power Microprocessor Design, INTERNATIONAL JOURNAL OF ENGINEERING RESEARCH & TECHNOLOGY (IJERT) Volume 10, Issue 07 (July 2021),
+1. Sanchith V M , Prashanth K S , Madhvesh M Ballal , Pawan Bharadwaj, 2021, Low Power Microprocessor Design, INTERNATIONAL JOURNAL OF ENGINEERING RESEARCH & TECHNOLOGY (IJERT) Volume 10, Issue 07 (July 2021).
+<br><br>
 2. Subodh Wairya, Rajendra Kumar Nagaria, Sudarshan Tiwari, "Performance Analysis of High Speed Hybrid CMOS Full Adder Circuits for Low Voltage VLSI Design", VLSI Design, vol. 2012, Article ID 173079, 18 pages, 2012. https://doi.org/10.1155/2012/173079
+<br><br>
 3. V. Venkata Roa, et al., Design and Simulation of 1-bit Arithmetic Logic Unit using Pass Transistor Logic Families, International Journal of Pure and Applied Mathematics, Volume 120, No. 6 2018
